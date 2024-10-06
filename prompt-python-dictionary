@@ -1,0 +1,49 @@
+# Define your template as a string with placeholders for the variables
+prompt_template = """
+Dear Hiring Manager,
+
+I am writing to express my interest in the {job_title} position at {company_name}. With my background in {relevant_skills}, I am confident that I can bring value to your team and contribute to {company_name}'s continued success.
+
+Throughout my career, I have gained extensive experience in {specific_experience} that aligns well with the requirements of the {job_title} role. I am particularly drawn to {company_name} because of {reason_for_interest}, and I am eager to bring my skills in {specific_skills} to your organization.
+
+Thank you for considering my application. I look forward to the possibility of discussing how I can contribute to {company_name}'s goals. Please feel free to contact me at {contact_information}.
+
+Best regards,
+{applicant_name}
+"""
+
+# Define the dictionary that holds different sets of values based on job functions
+job_functions = {
+    "Product Management": {
+        "job_title": "Product Manager",
+        "company_name": "TechCorp",
+        "relevant_skills": "product strategy and cross-functional leadership",
+        "specific_experience": "leading product development teams and launching successful products",
+        "reason_for_interest": "your commitment to innovation and user-centric design",
+        "specific_skills": "agile development, user research, and roadmap planning",
+        "contact_information": "alice.johnson@email.com",
+        "applicant_name": "Alice Johnson"
+    },
+    "Product Marketing": {
+        "job_title": "Product Marketing Manager",
+        "company_name": "TechCorp",
+        "relevant_skills": "product positioning and go-to-market strategy",
+        "specific_experience": "developing marketing campaigns and managing product launches",
+        "reason_for_interest": "your focus on customer-centric storytelling and innovative campaigns",
+        "specific_skills": "market research, messaging development, and campaign execution",
+        "contact_information": "alice.johnson@email.com",
+        "applicant_name": "Alice Johnson"
+    }
+}
+
+# Ask the user to select a job function
+selected_job_function = "Product Management"  # This could also be an input() to get user choice
+
+# Get the corresponding values based on user selection
+values = job_functions[selected_job_function]
+
+# Use the dictionary to populate the variables in the template
+filled_prompt = prompt_template.format(**values)
+
+# Print the filled prompt
+print(filled_prompt)
