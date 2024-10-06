@@ -4,7 +4,7 @@ import os
 from playsound import playsound
 
 # Replace this with your actual Eleven Labs API key
-API_KEY = 'elevenlabs_API_key_here'
+API_KEY = 'sk_59ad6c686c1376550e5d6aaa08d5a24e0f78fdf520b82fc4'
 
 # The text you want to convert to speech
 text = "Hello, world... Can you hear me?"
