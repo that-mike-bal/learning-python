@@ -1,0 +1,24 @@
+feeling_score = int(input("On a scale of 1 to 10, how are you feeling today? "))
+
+if feeling_score == 10:
+    print("You've discovered the secret to eternal happiness!")
+if feeling_score == 9:
+    print("On the  verge of uncapped bliss.")
+elif feeling_score >= 8:
+    print("Like a superhero who just saved the day for the millionth time!")
+elif feeling_score >= 7:
+    print("Better than most.")
+elif feeling_score >= 6:
+    print("Slightly better than feeling nothing at all.")
+elif feeling_score >= 5:
+    print("The poster child of neutral.")
+elif feeling_score >= 4:
+    print("On the edge of anger and stoicism.")
+elif feeling_score >= 2:
+    print("like you should probably get more coffee.")
+elif feeling_score >= 2:
+    print("Approaching the danger zone, beware of stupid people.")
+elif feeling_score == 1:
+    print("Please walk away before someone gets hurt.")
+else:
+    print("That's out of range! Please enter a number between 1 and 10.")
