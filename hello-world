@@ -1,0 +1,45 @@
+import requests
+import json
+import os
+from playsound import playsound
+
+# Replace this with your actual Eleven Labs API key
+API_KEY = 'elevenlabs_API_key_here'
+
+# The text you want to convert to speech
+text = "Hello, world... Can you hear me?"
+
+# The Eleven Labs voice ID you'd like to use (replace with your preferred voice ID)
+voice_id = "N2lVS1w4EtoT3dr4eOWO"
+
+# Eleven Labs API endpoint
+url = f"https://api.elevenlabs.io/v1/text-to-speech/{voice_id}"
+
+# Request headers with authorization
+headers = {
+    "accept": "audio/mpeg",
+    "xi-api-key": API_KEY,
+    "Content-Type": "application/json"
+}
+
+# Request body with the text to convert
+data = json.dumps({
+    "text": text
+})
+
+# Make the POST request to Eleven Labs
+response = requests.post(url, headers=headers, data=data)
+
+# Check if the request was successful
+if response.status_code == 200:
+    # Save the audio file locally
+    with open("output.mp3", "wb") as f:
+        f.write(response.content)
+
+    # Play the audio file
+    playsound("output.mp3")
+
+    # Optional: Remove the file after playing
+    os.remove("output.mp3")
+else:
+    print(f"Error: {response.status_code} - {response.text}")
